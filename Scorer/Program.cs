@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Welcome to Scorer!");
+Console.WriteLine("We'll be helping you analyse your teams metrics, in the form of contributions in GitHub.");
+
+Console.WriteLine("Please hold.");
