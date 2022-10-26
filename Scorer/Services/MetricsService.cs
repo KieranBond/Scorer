@@ -1,16 +1,22 @@
-﻿using Octokit;
+﻿using Scorer.Dto;
 
-namespace Scorer
+namespace Scorer.Services
 {
     public class MetricsService : IMetricsService
     {
+        private readonly IApiFacade _apiFacade;
+
+        public MetricsService()
+        {
+            _apiFacade = new GitHubFacade();
+        }
+
         public UserMetrics? GetUserMetrics(string username)
         {
             if (string.IsNullOrWhiteSpace(username))
                 return null;
 
-            var github = new GitHubClient(new ProductHeaderValue("kb-scorer"));
-            var user = github.User.Get(username).Result;
+            var user = _apiFacade.GetUser(username);
 
             return new UserMetrics(username, user.HtmlUrl);
         }

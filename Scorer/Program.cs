@@ -1,4 +1,5 @@
 ﻿using Scorer;
+using Scorer.Services;
 
 Console.WriteLine("Welcome to Scorer!");
 Console.WriteLine("We'll be helping you analyse your teams metrics, in the form of contributions in GitHub.");
@@ -18,4 +19,11 @@ while (string.IsNullOrWhiteSpace(username))
 var metricService = new MetricsService();
 var userMetrics = metricService.GetUserMetrics(username);
 
-Console.WriteLine($"Username: {userMetrics.Username}, User page URL: {userMetrics.PageUrl}");
+if (userMetrics != null)
+{
+    Console.WriteLine($"Username: {userMetrics?.Username}, User page URL: {userMetrics?.PageUrl}");
+}
+else
+{
+    Console.WriteLine($"Unable to find User with username: '{username}'");
+}

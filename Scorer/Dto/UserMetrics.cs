@@ -1,4 +1,4 @@
-﻿namespace Scorer
+﻿namespace Scorer.Dto
 {
     public sealed class UserMetrics
     {

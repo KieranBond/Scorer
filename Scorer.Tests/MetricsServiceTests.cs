@@ -1,11 +1,12 @@
 using NUnit.Framework;
 using FluentAssertions;
+using Scorer.Services;
 
 namespace Scorer.Tests
 {
     public class MetricsServiceTests
     {
-        private readonly MetricsService _metricsService = new();
+        private readonly IMetricsService _metricsService = new MetricsService();
 
         [Test]
         public void Provides_Correct_User_Information()
