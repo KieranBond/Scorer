@@ -2,6 +2,6 @@
 {
     public interface IMetricsService
     {
-        UserMetrics GetUserMetrics(string username);
+        UserMetrics? GetUserMetrics(string username);
     }
 }
