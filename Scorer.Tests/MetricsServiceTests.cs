@@ -7,6 +7,10 @@ namespace Scorer.Tests
     {
         private readonly MetricsService _metricsService = new();
 
+        // TODO:
+        // Handle bad username
+        // Handle empty username
+
         [Test]
         public void Provides_Correct_User_Information()
         {
